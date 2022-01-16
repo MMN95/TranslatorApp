@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/mmn95/AndroidStudioProjects/GBProjects/TranslatorApp/app/src/main/res/layout/activity_main.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/mmn95/AndroidStudioProjects/GBProjects/TranslatorApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/mmn95/AndroidStudioProjects/GBProjects/TranslatorApp/app/src/main/res/layout/activity_main_recyclerview_item.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/mmn95/AndroidStudioProjects/GBProjects/TranslatorApp/app/src/main/res/layout/search_dialog_fragment.xml" value="0.33" />
       </map>
     </option>
   </component>
