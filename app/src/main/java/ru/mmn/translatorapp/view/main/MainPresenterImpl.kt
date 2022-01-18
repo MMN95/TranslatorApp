@@ -1,7 +1,14 @@
-package ru.mmn.translatorapp
+package ru.mmn.translatorapp.view.main
 
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableObserver
+import ru.mmn.translatorapp.model.data.AppState
+import ru.mmn.translatorapp.model.datasource.DataSourceLocal
+import ru.mmn.translatorapp.model.datasource.DataSourceRemote
+import ru.mmn.translatorapp.model.repository.RepositoryImplementation
+import ru.mmn.translatorapp.presenter.Presenter
+import ru.mmn.translatorapp.rx.SchedulerProvider
+import ru.mmn.translatorapp.view.base.View
 
 class MainPresenterImpl<T : AppState, V : View>(
 

@@ -1,4 +1,4 @@
-package ru.mmn.translatorapp
+package ru.mmn.translatorapp.model.datasource
 
 import io.reactivex.Observable
 

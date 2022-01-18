@@ -1,6 +1,11 @@
-package ru.mmn.translatorapp
+package ru.mmn.translatorapp.view.main
 
 import io.reactivex.Observable
+import ru.mmn.translatorapp.model.data.AppState
+import ru.mmn.translatorapp.model.data.DataModel
+import ru.mmn.translatorapp.model.repository.Repository
+import ru.mmn.translatorapp.presenter.Interactor
+
 
 class MainInteractor(
 

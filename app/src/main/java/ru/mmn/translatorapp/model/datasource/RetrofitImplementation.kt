@@ -1,4 +1,4 @@
-package ru.mmn.translatorapp
+package ru.mmn.translatorapp.model.datasource
 
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import io.reactivex.Observable
@@ -7,6 +7,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import ru.mmn.translatorapp.model.data.DataModel
 
 class RetrofitImplementation : DataSource<List<DataModel>> {
 

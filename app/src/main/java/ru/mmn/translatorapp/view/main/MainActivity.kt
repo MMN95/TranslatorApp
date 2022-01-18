@@ -1,11 +1,18 @@
-package ru.mmn.translatorapp
+package ru.mmn.translatorapp.view.main
 
 import android.os.Bundle
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import ru.mmn.translatorapp.R
 import ru.mmn.translatorapp.databinding.ActivityMainBinding
+import ru.mmn.translatorapp.model.data.AppState
+import ru.mmn.translatorapp.model.data.DataModel
+import ru.mmn.translatorapp.presenter.Presenter
+import ru.mmn.translatorapp.view.base.BaseActivity
+import ru.mmn.translatorapp.view.base.View
+import ru.mmn.translatorapp.view.main.adapter.MainAdapter
 
 class MainActivity : BaseActivity<AppState>() {
 

@@ -1,4 +1,7 @@
-package ru.mmn.translatorapp
+package ru.mmn.translatorapp.presenter
+
+import ru.mmn.translatorapp.model.data.AppState
+import ru.mmn.translatorapp.view.base.View
 
 interface Presenter<T : AppState, V : View> {
 

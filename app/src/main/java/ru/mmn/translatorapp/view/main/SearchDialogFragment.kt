@@ -1,4 +1,4 @@
-package ru.mmn.translatorapp
+package ru.mmn.translatorapp.view.main
 
 import android.os.Bundle
 import android.text.Editable
