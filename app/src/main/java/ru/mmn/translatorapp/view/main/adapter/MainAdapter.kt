@@ -1,9 +1,12 @@
-package ru.mmn.translatorapp
+package ru.mmn.translatorapp.view.main.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import ru.mmn.translatorapp.R
+import ru.mmn.translatorapp.model.data.DataModel
 
 class MainAdapter(
     private var onListItemClickListener: OnListItemClickListener,
@@ -36,6 +39,8 @@ class MainAdapter(
         fun bind(data: DataModel) {
             if (layoutPosition != RecyclerView.NO_POSITION) {
                 itemView.findViewById<TextView>(R.id.header_textview_recycler_item).text = data.text
+                itemView.findViewById<TextView>(R.id.transcription_textview_recycler_item).text =
+                    data.meanings?.get(0)?.transcription
                 itemView.findViewById<TextView>(R.id.description_textview_recycler_item).text =
                     data.meanings?.get(0)?.translation?.translation
                 itemView.setOnClickListener { openInNewWindow(data) }
