@@ -4,20 +4,23 @@ import android.os.Bundle
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.Toast
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.mmn.translatorapp.R
 import ru.mmn.translatorapp.databinding.ActivityMainBinding
 import ru.mmn.translatorapp.model.data.AppState
 import ru.mmn.translatorapp.model.data.DataModel
-import ru.mmn.translatorapp.presenter.Presenter
 import ru.mmn.translatorapp.view.base.BaseActivity
-import ru.mmn.translatorapp.view.base.View
 import ru.mmn.translatorapp.view.main.adapter.MainAdapter
 
 class MainActivity : BaseActivity<AppState>() {
 
     private lateinit var binding: ActivityMainBinding
-
+    override val model: MainViewModel by lazy {
+        ViewModelProvider.NewInstanceFactory().create(MainViewModel::class.java)
+    }
+    private val observer = Observer<AppState> { renderData(it) }
     private var adapter: MainAdapter? = null
     private val onListItemClickListener: MainAdapter.OnListItemClickListener =
         object : MainAdapter.OnListItemClickListener {
@@ -25,10 +28,6 @@ class MainActivity : BaseActivity<AppState>() {
                 Toast.makeText(this@MainActivity, data.text, Toast.LENGTH_SHORT).show()
             }
         }
-
-    override fun createPresenter(): Presenter<AppState, View> {
-        return MainPresenterImpl()
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +38,7 @@ class MainActivity : BaseActivity<AppState>() {
             searchDialogFragment.setOnSearchClickListener(object :
                 SearchDialogFragment.OnSearchClickListener {
                 override fun onClick(searchWord: String) {
-                    presenter.getData(searchWord, true)
+                    model.getData(searchWord, true).observe(this@MainActivity, observer)
                 }
             })
             searchDialogFragment.show(supportFragmentManager, BOTTOM_SHEET_FRAGMENT_DIALOG_TAG)
@@ -85,7 +84,7 @@ class MainActivity : BaseActivity<AppState>() {
         showViewError()
         binding.errorTextview.text = error ?: getString(R.string.undefined_error)
         binding.reloadButton.setOnClickListener {
-            presenter.getData("hi", true)
+            model.getData("hi", true).observe(this, observer)
         }
     }
 

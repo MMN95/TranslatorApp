@@ -4,7 +4,7 @@ import io.reactivex.Observable
 import ru.mmn.translatorapp.model.data.AppState
 import ru.mmn.translatorapp.model.data.DataModel
 import ru.mmn.translatorapp.model.repository.Repository
-import ru.mmn.translatorapp.presenter.Interactor
+import ru.mmn.translatorapp.viewmodel.Interactor
 
 
 class MainInteractor(
