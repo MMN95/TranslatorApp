@@ -5,9 +5,8 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.observers.DisposableObserver
 import ru.mmn.translatorapp.model.data.AppState
 import ru.mmn.translatorapp.viewmodel.BaseViewModel
-import javax.inject.Inject
 
-class MainViewModel @Inject constructor(private val interactor: MainInteractor) :
+class MainViewModel (private val interactor: MainInteractor) :
     BaseViewModel<AppState>() {
 
     private var appState: AppState? = null
@@ -16,15 +15,18 @@ class MainViewModel @Inject constructor(private val interactor: MainInteractor) 
         return liveDataForViewToObserve
     }
 
-    override fun getData(word: String, isOnline: Boolean) {
+    override fun getData(word: String, isOnline: Boolean): LiveData<AppState> {
         compositeDisposable.add(
             interactor.getData(word, isOnline)
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
-                .doOnSubscribe(doOnSubscribe())
+                .doOnSubscribe{ liveDataForViewToObserve.value = AppState.Loading(null) }
+
                 .subscribeWith(getObserver())
         )
+        return super.getData(word, isOnline)
     }
+
 
     private fun doOnSubscribe(): (Disposable) -> Unit =
         { liveDataForViewToObserve.value = AppState.Loading(null) }
@@ -33,7 +35,7 @@ class MainViewModel @Inject constructor(private val interactor: MainInteractor) 
         return object : DisposableObserver<AppState>() {
 
             override fun onNext(state: AppState) {
-                appState = parseSearchResults(state)
+//                appState = parseSearchResults(state)
                 liveDataForViewToObserve.value = appState
             }
 
@@ -46,5 +48,3 @@ class MainViewModel @Inject constructor(private val interactor: MainInteractor) 
         }
     }
 }
-
-

@@ -3,9 +3,8 @@ package ru.mmn.translatorapp.view.base
 import androidx.appcompat.app.AppCompatActivity
 import ru.mmn.translatorapp.model.data.AppState
 import ru.mmn.translatorapp.viewmodel.BaseViewModel
-import ru.mmn.translatorapp.viewmodel.Interactor
 
-abstract class BaseActivity<T : AppState, I: Interactor<T>> : AppCompatActivity() {
+abstract class BaseActivity<T : AppState> : AppCompatActivity() {
 
     abstract val model: BaseViewModel<T>
 
