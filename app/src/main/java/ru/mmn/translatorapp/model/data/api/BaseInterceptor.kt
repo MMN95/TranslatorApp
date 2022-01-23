@@ -1,4 +1,4 @@
-package ru.mmn.translatorapp.model.datasource
+package ru.mmn.translatorapp.model.data.api
 
 import okhttp3.Interceptor
 import okhttp3.Response

@@ -1,7 +1,9 @@
-package ru.mmn.translatorapp.di
+package ru.mmn.translatorapp.application
 
 import android.app.Application
 import org.koin.core.context.startKoin
+import ru.mmn.translatorapp.di.application
+import ru.mmn.translatorapp.di.mainScreen
 
 class TranslatorApp : Application() {
 
