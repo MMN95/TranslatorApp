@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".application.TranslatorApp">
+        <activity android:name=".DescriptionActivity">
+        </activity>
+
         <activity
             android:name=".view.main.MainActivity"
             android:exported="true">
