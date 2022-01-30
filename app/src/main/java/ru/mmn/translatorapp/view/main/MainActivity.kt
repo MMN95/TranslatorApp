@@ -24,27 +24,26 @@ class MainActivity : BaseActivity<AppState, MainInteractor>() {
 
     private lateinit var binding: ActivityMainBinding
     override lateinit var model: MainViewModel
-    private val adapter: MainAdapter by lazy { MainAdapter(onListItemClickListener) }
+    private val adapter: MainAdapter by lazy { MainAdapter(::onItemClick) }
     private val fabClickListener: View.OnClickListener =
         View.OnClickListener {
             val searchDialogFragment = SearchDialogFragment.newInstance()
             searchDialogFragment.setOnSearchClickListener(onSearchClickListener)
             searchDialogFragment.show(supportFragmentManager, BOTTOM_SHEET_FRAGMENT_DIALOG_TAG)
         }
-    private val onListItemClickListener: MainAdapter.OnListItemClickListener =
-        object : MainAdapter.OnListItemClickListener {
-            override fun onItemClick(data: DataModel) {
-                startActivity(
-                    DescriptionActivity.getIntent(
-                        this@MainActivity,
-                        data.text!!,
-                        convertMeaningsToString(data.meanings!!),
-                        data.meanings[0].transcription!!,
-                        data.meanings[0].imageUrl,
-                    )
-                )
-            }
-        }
+
+    fun onItemClick(data: DataModel) {
+        startActivity(
+            DescriptionActivity.getIntent(
+                this@MainActivity,
+                data.text!!,
+                convertMeaningsToString(data.meanings!!),
+                data.meanings[0].transcription!!,
+                data.meanings[0].imageUrl,
+            )
+        )
+    }
+
     private val onSearchClickListener: SearchDialogFragment.OnSearchClickListener =
         object : SearchDialogFragment.OnSearchClickListener {
             override fun onClick(searchWord: String) {

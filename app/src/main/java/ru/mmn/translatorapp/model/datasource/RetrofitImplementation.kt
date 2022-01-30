@@ -10,6 +10,8 @@ import ru.mmn.translatorapp.model.data.DataModel
 import ru.mmn.translatorapp.model.data.api.ApiService
 import ru.mmn.translatorapp.model.data.api.BaseInterceptor
 
+private const val BASE_URL_LOCATIONS = "https://dictionary.skyeng.ru/api/public/v1/"
+
 class RetrofitImplementation : DataSource<List<DataModel>> {
 
     override suspend fun getData(word: String): List<DataModel> {
@@ -30,13 +32,10 @@ class RetrofitImplementation : DataSource<List<DataModel>> {
     }
 
     private fun createOkHttpClient(interceptor: Interceptor): OkHttpClient {
-        val httpClient = OkHttpClient.Builder()
-        httpClient.addInterceptor(interceptor)
-        httpClient.addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
-        return httpClient.build()
-    }
-
-    companion object {
-        private const val BASE_URL_LOCATIONS = "https://dictionary.skyeng.ru/api/public/v1/"
+        return OkHttpClient.Builder()
+            .addInterceptor(interceptor)
+            .addInterceptor(HttpLoggingInterceptor()
+                .setLevel(HttpLoggingInterceptor.Level.BODY))
+            .build()
     }
 }
