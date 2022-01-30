@@ -1,12 +1,12 @@
-package ru.mmn.translatorapp.view.main
+package ru.mmn.translatorapp.viewmodel
 
 import androidx.lifecycle.LiveData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import ru.mmn.translatorapp.model.data.AppState
-import ru.mmn.translatorapp.utils.parseSearchResults
-import ru.mmn.translatorapp.viewmodel.BaseViewModel
+import ru.mmn.translatorapp.utils.parseOnlineSearchResults
+import ru.mmn.translatorapp.view.main.MainInteractor
 
 class MainViewModel (private val interactor: MainInteractor) :
     BaseViewModel<AppState>() {
@@ -25,7 +25,7 @@ class MainViewModel (private val interactor: MainInteractor) :
 
     private suspend fun startInteractor(word: String, isOnline: Boolean) =
         withContext(Dispatchers.IO) {
-            _mutableLiveData.postValue(parseSearchResults(interactor.getData(word, isOnline)))
+            _mutableLiveData.postValue(parseOnlineSearchResults(interactor.getData(word, isOnline)))
         }
 
     override fun handleError(error: Throwable) {
