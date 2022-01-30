@@ -1,4 +1,4 @@
-package ru.mmn.translatorapp.database
+package ru.mmn.translatorapp.room
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

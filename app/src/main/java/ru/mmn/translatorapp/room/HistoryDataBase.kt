@@ -1,4 +1,4 @@
-package ru.mmn.translatorapp.database
+package ru.mmn.translatorapp.room
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

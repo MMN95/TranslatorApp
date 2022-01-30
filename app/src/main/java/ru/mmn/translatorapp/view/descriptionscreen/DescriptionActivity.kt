@@ -1,4 +1,4 @@
-package ru.mmn.translatorapp
+package ru.mmn.translatorapp.view.descriptionscreen
 
 import android.content.Context
 import android.content.Intent
@@ -18,6 +18,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
+import ru.mmn.translatorapp.R
 import ru.mmn.translatorapp.databinding.ActivityDescriptionBinding
 import ru.mmn.translatorapp.utils.isOnline
 import ru.mmn.translatorapp.utils.ui.AlertDialogFragment
@@ -55,7 +56,10 @@ class DescriptionActivity : AppCompatActivity() {
         val bundle = intent.extras
         binding.descriptionHeader.text = bundle?.getString(WORD_EXTRA)
         binding.descriptionTextview.text = bundle?.getString(DESCRIPTION_EXTRA)
-        binding.transcriptionTextview.text = bundle?.getString(TRANSCRIPTION_EXTRA)
+        binding.transcriptionTextview.text = String.format(
+            "[%s]",
+            bundle?.getString(TRANSCRIPTION_EXTRA)
+        )
         val imageLink = bundle?.getString(URL_EXTRA)
         if (imageLink.isNullOrBlank()) {
             stopRefreshAnimationIfNeeded()
@@ -155,7 +159,6 @@ class DescriptionActivity : AppCompatActivity() {
 
         ImageLoader(this).execute(request)
     }
-
 
 
     companion object {

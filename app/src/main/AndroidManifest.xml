@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DescriptionActivity"
+            android:name=".view.descriptionscreen.DescriptionActivity"
             android:screenOrientation="portrait"/>
 
         <activity

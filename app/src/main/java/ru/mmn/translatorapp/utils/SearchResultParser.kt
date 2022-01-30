@@ -1,9 +1,9 @@
 package ru.mmn.translatorapp.utils
 
-import ru.mmn.translatorapp.database.HistoryEntity
 import ru.mmn.translatorapp.model.data.AppState
 import ru.mmn.translatorapp.model.data.DataModel
 import ru.mmn.translatorapp.model.data.Meanings
+import ru.mmn.translatorapp.room.HistoryEntity
 
 fun parseOnlineSearchResults(appState: AppState): AppState {
     return AppState.Success(mapResult(appState, true))

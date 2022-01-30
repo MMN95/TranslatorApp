@@ -7,7 +7,6 @@ import ru.mmn.translatorapp.databinding.ActivityHistoryBinding
 import ru.mmn.translatorapp.model.data.AppState
 import ru.mmn.translatorapp.model.data.DataModel
 import ru.mmn.translatorapp.view.base.BaseActivity
-import ru.mmn.translatorapp.viewmodel.HistoryViewModel
 
 class HistoryActivity : BaseActivity<AppState, HistoryInteractor>() {
 
