@@ -1,4 +1,4 @@
-package ru.mmn.translatorapp.presenter
+package ru.mmn.translatorapp.viewmodel
 
 import io.reactivex.Observable
 
