@@ -4,10 +4,10 @@ import androidx.lifecycle.LiveData
 import kotlinx.coroutines.launch
 import ru.mmn.translatorapp.model.data.AppState
 import ru.mmn.translatorapp.utils.parseLocalSearchResults
-import ru.mmn.translatorapp.viewmodel.BaseViewModel
+import ru.mmn.core.viewmodel.BaseViewModel
 
 class HistoryViewModel(private val interactor: HistoryInteractor) :
-    BaseViewModel<AppState>() {
+    ru.mmn.core.viewmodel.BaseViewModel<AppState>() {
 
     private val liveDataForViewToObserve: LiveData<AppState> = _mutableLiveData
 

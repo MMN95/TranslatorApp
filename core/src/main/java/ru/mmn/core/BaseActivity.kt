@@ -1,24 +1,25 @@
-package ru.mmn.translatorapp.view.base
+package ru.mmn.core
 
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import ru.mmn.core.databinding.LoadingLayoutBinding
 import ru.mmn.translatorapp.R
 import ru.mmn.translatorapp.databinding.LoadingLayoutBinding
 import ru.mmn.translatorapp.model.data.AppState
 import ru.mmn.translatorapp.model.data.DataModel
 import ru.mmn.translatorapp.utils.isOnline
 import ru.mmn.translatorapp.utils.ui.AlertDialogFragment
-import ru.mmn.translatorapp.viewmodel.BaseViewModel
-import ru.mmn.translatorapp.viewmodel.Interactor
+import ru.mmn.core.viewmodel.BaseViewModel
+import ru.mmn.core.viewmodel.Interactor
 
 private const val DIALOG_FRAGMENT_TAG = "74a54328-5d62-46bf-ab6b-cbf5d8c79522"
 
-abstract class BaseActivity<T : AppState, I : Interactor<T>> : AppCompatActivity() {
+abstract class BaseActivity<T : AppState, I : ru.mmn.core.viewmodel.Interactor<T>> : AppCompatActivity() {
 
     private lateinit var binding: LoadingLayoutBinding
-    abstract val model: BaseViewModel<T>
+    abstract val model: ru.mmn.core.viewmodel.BaseViewModel<T>
     protected var isNetworkAvailable: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {

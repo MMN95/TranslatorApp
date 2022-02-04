@@ -6,10 +6,10 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import ru.mmn.translatorapp.model.data.AppState
 import ru.mmn.translatorapp.utils.parseOnlineSearchResults
-import ru.mmn.translatorapp.viewmodel.BaseViewModel
+import ru.mmn.core.viewmodel.BaseViewModel
 
 class MainViewModel(private val interactor: MainInteractor) :
-    BaseViewModel<AppState>() {
+    ru.mmn.core.viewmodel.BaseViewModel<AppState>() {
 
     private val liveDataForViewToObserve: LiveData<AppState> = _mutableLiveData
 

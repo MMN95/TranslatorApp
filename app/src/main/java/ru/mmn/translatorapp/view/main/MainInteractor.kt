@@ -4,13 +4,13 @@ import ru.mmn.translatorapp.model.data.AppState
 import ru.mmn.translatorapp.model.data.DataModel
 import ru.mmn.translatorapp.model.repository.Repository
 import ru.mmn.translatorapp.model.repository.RepositoryLocal
-import ru.mmn.translatorapp.viewmodel.Interactor
+import ru.mmn.core.viewmodel.Interactor
 
 
 class MainInteractor(
     private val repositoryRemote: Repository<List<DataModel>>,
     private val repositoryLocal: RepositoryLocal<List<DataModel>>
-) : Interactor<AppState> {
+) : ru.mmn.core.viewmodel.Interactor<AppState> {
 
     override suspend fun getData(word: String, fromRemoteSource: Boolean): AppState {
         val appState: AppState

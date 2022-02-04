@@ -1,4 +1,4 @@
-package ru.mmn.translatorapp.viewmodel
+package ru.mmn.core.viewmodel
 
 interface Interactor<T> {
 
