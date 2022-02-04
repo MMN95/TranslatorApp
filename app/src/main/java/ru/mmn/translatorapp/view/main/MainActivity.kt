@@ -6,7 +6,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
-import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.mmn.translatorapp.R
 import ru.mmn.translatorapp.databinding.ActivityMainBinding
 import ru.mmn.translatorapp.model.data.AppState

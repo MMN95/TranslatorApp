@@ -11,3 +11,5 @@ dependencyResolutionManagement {
 rootProject.name = "TranslatorApp"
 include ':app'
 include ':core'
+include ':HistoryScreen'
+include ':myapplication'
