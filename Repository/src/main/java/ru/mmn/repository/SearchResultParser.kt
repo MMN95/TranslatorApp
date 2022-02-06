@@ -1,4 +1,4 @@
-package ru.mmn.translatorapp.utils
+package ru.mmn.repository
 
 import ru.mmn.translatorapp.model.data.AppState
 import ru.mmn.translatorapp.model.data.DataModel
@@ -48,8 +48,8 @@ private fun getSuccessResultData(
 private fun parseOnlineResult(dataModel: DataModel, newDataModels: ArrayList<DataModel>) {
     if (!dataModel.text.isNullOrBlank() && !dataModel.meanings.isNullOrEmpty()) {
         val newMeanings = arrayListOf<Meanings>()
-        for (meaning in dataModel.meanings) {
-            if (meaning.translation != null && !meaning.translation.translation.isNullOrBlank()) {
+        for (meaning in dataModel.meanings!!) {
+            if (meaning.translation != null && !meaning.translation!!.translation.isNullOrBlank()) {
                 newMeanings.add(
                     Meanings(
                         meaning.translation,

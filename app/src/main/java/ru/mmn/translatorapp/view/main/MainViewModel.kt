@@ -2,10 +2,10 @@ package ru.mmn.translatorapp.view.main
 
 import androidx.lifecycle.LiveData
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import ru.mmn.translatorapp.model.data.AppState
 import ru.mmn.translatorapp.utils.parseOnlineSearchResults
-import ru.mmn.core.viewmodel.BaseViewModel
 
 class MainViewModel(private val interactor: MainInteractor) :
     ru.mmn.core.viewmodel.BaseViewModel<AppState>() {

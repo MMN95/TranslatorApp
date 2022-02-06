@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 
 dependencies {
@@ -19,15 +18,11 @@ dependencies {
 
     //Koin for Android
     implementation Koin.koin_android
-    implementation Koin.koin_view_model
+    implementation Koin.koin_kotlin
 
     //Test
     testImplementation TestImpl.junit
     androidTestImplementation TestImpl.runner
     androidTestImplementation TestImpl.espresso
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-}
-
-repositories {
-    mavenCentral()
 }

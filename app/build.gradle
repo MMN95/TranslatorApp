@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -35,6 +34,13 @@ android {
 
 dependencies {
 
+    //Modules
+    implementation project(Modules.core)
+    implementation project(Modules.model)
+    implementation project(Modules.repository)
+    implementation project(Modules.utils)
+    implementation project(Modules.historyScreen) //Feature
+
     // AndroidX
     implementation Design.appcompat
 
@@ -67,4 +73,5 @@ dependencies {
     androidTestImplementation TestImpl.espresso
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 }

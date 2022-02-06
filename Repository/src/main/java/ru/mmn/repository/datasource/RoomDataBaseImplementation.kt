@@ -1,10 +1,11 @@
 package ru.mmn.translatorapp.model.datasource
 
+import ru.mmn.repository.convertDataModelSuccessToEntity
+import ru.mmn.repository.mapHistoryEntityToSearchResult
 import ru.mmn.translatorapp.model.data.AppState
 import ru.mmn.translatorapp.model.data.DataModel
 import ru.mmn.translatorapp.room.HistoryDao
-import ru.mmn.translatorapp.utils.convertDataModelSuccessToEntity
-import ru.mmn.translatorapp.utils.mapHistoryEntityToSearchResult
+
 
 class RoomDataBaseImplementation(private val historyDao: HistoryDao) :
     DataSourceLocal<List<DataModel>> {

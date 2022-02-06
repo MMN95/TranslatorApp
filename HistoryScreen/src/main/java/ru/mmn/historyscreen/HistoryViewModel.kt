@@ -2,9 +2,9 @@ package ru.mmn.translatorapp.view.history
 
 import androidx.lifecycle.LiveData
 import kotlinx.coroutines.launch
+import ru.mmn.historyscreen.parseLocalSearchResults
 import ru.mmn.translatorapp.model.data.AppState
-import ru.mmn.translatorapp.utils.parseLocalSearchResults
-import ru.mmn.core.viewmodel.BaseViewModel
+
 
 class HistoryViewModel(private val interactor: HistoryInteractor) :
     ru.mmn.core.viewmodel.BaseViewModel<AppState>() {

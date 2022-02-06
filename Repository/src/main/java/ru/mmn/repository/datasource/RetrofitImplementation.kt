@@ -34,7 +34,8 @@ class RetrofitImplementation : DataSource<List<DataModel>> {
     private fun createOkHttpClient(interceptor: Interceptor): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(interceptor)
-            .addInterceptor(HttpLoggingInterceptor()
+            .addInterceptor(
+                HttpLoggingInterceptor()
                 .setLevel(HttpLoggingInterceptor.Level.BODY))
             .build()
     }

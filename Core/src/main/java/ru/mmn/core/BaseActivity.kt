@@ -5,14 +5,10 @@ import android.os.PersistableBundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import ru.mmn.core.databinding.LoadingLayoutBinding
-import ru.mmn.translatorapp.R
-import ru.mmn.translatorapp.databinding.LoadingLayoutBinding
 import ru.mmn.translatorapp.model.data.AppState
 import ru.mmn.translatorapp.model.data.DataModel
 import ru.mmn.translatorapp.utils.isOnline
 import ru.mmn.translatorapp.utils.ui.AlertDialogFragment
-import ru.mmn.core.viewmodel.BaseViewModel
-import ru.mmn.core.viewmodel.Interactor
 
 private const val DIALOG_FRAGMENT_TAG = "74a54328-5d62-46bf-ab6b-cbf5d8c79522"
 
@@ -57,7 +53,7 @@ abstract class BaseActivity<T : AppState, I : ru.mmn.core.viewmodel.Interactor<T
                 if (appState.progress != null) {
                     binding.progressBarHorizontal.visibility = View.VISIBLE
                     binding.progressBarRound.visibility = View.GONE
-                    binding.progressBarHorizontal.progress = appState.progress
+                    binding.progressBarHorizontal.progress = appState.progress!!
                 } else {
                     binding.progressBarHorizontal.visibility = View.GONE
                     binding.progressBarRound.visibility = View.VISIBLE

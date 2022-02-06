@@ -6,13 +6,14 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import ru.mmn.core.BaseActivity
 import ru.mmn.translatorapp.R
 import ru.mmn.translatorapp.databinding.ActivityMainBinding
 import ru.mmn.translatorapp.model.data.AppState
 import ru.mmn.translatorapp.model.data.DataModel
 import ru.mmn.translatorapp.utils.convertMeaningsToString
 import ru.mmn.translatorapp.utils.isOnline
-import ru.mmn.translatorapp.view.base.BaseActivity
 import ru.mmn.translatorapp.view.descriptionscreen.DescriptionActivity
 import ru.mmn.translatorapp.view.history.HistoryActivity
 import ru.mmn.translatorapp.view.main.adapter.MainAdapter
@@ -37,8 +38,8 @@ class MainActivity : BaseActivity<AppState, MainInteractor>() {
                 this@MainActivity,
                 data.text!!,
                 convertMeaningsToString(data.meanings!!),
-                data.meanings[0].transcription!!,
-                data.meanings[0].imageUrl,
+                data.meanings!![0].transcription!!,
+                data.meanings!![0].imageUrl,
             )
         )
     }

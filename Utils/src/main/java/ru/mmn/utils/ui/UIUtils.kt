@@ -2,7 +2,7 @@ package ru.mmn.translatorapp.utils.ui
 
 import android.content.Context
 import androidx.appcompat.app.AlertDialog
-import ru.mmn.translatorapp.R
+import ru.mmn.utils.R
 
 fun getStubAlertDialog(context: Context): AlertDialog {
     return getAlertDialog(context, null, null)
