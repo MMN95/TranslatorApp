@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.mmn.translatorapp.R
 import ru.mmn.translatorapp.model.data.DataModel
 
-class MainAdapter(private var onListItemClickListener: OnListItemClickListener) :
+class MainAdapter(private var onListItemClick: (DataModel) -> Unit) :
     RecyclerView.Adapter<MainAdapter.RecyclerItemViewHolder>() {
 
     private var data: List<DataModel> = arrayListOf()
@@ -38,7 +38,7 @@ class MainAdapter(private var onListItemClickListener: OnListItemClickListener) 
             if (layoutPosition != RecyclerView.NO_POSITION) {
                 itemView.findViewById<TextView>(R.id.header_textview_recycler_item).text = data.text
                 itemView.findViewById<TextView>(R.id.transcription_textview_recycler_item).text =
-                    data.meanings?.get(0)?.transcription
+                    String.format("[%s]", data.meanings?.get(0)?.transcription)
                 itemView.findViewById<TextView>(R.id.description_textview_recycler_item).text =
                     data.meanings?.get(0)?.translation?.translation
                 itemView.setOnClickListener { openInNewWindow(data) }
@@ -47,10 +47,6 @@ class MainAdapter(private var onListItemClickListener: OnListItemClickListener) 
     }
 
     private fun openInNewWindow(listItemData: DataModel) {
-        onListItemClickListener.onItemClick(listItemData)
-    }
-
-    interface OnListItemClickListener {
-        fun onItemClick(data: DataModel)
+        onListItemClick(listItemData)
     }
 }
