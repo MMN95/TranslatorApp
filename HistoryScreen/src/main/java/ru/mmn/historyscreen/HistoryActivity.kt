@@ -2,7 +2,7 @@ package ru.mmn.translatorapp.view.history
 
 import android.os.Bundle
 import androidx.lifecycle.Observer
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.android.scope.currentScope
 import ru.mmn.core.BaseActivity
 import ru.mmn.historyscreen.databinding.ActivityHistoryBinding
 import ru.mmn.translatorapp.model.data.AppState
@@ -36,7 +36,7 @@ class HistoryActivity : BaseActivity<AppState, HistoryInteractor>() {
         if (binding.historyActivityRecyclerview.adapter != null) {
             throw IllegalStateException("The ViewModel should be initialised first")
         }
-        val viewModel: HistoryViewModel by viewModel()
+        val viewModel: HistoryViewModel by currentScope.inject()
         model = viewModel
         model.subscribe().observe(this@HistoryActivity, Observer<AppState> { renderData(it) })
     }

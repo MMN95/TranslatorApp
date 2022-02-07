@@ -57,7 +57,7 @@ dependencies {
 
     // Koin for Android
     implementation Koin.koin_android
-    implementation Koin.koin_kotlin
+    implementation Koin.koin_view_model
 
     //Coil
     implementation Coil.coil
