@@ -7,8 +7,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import ru.mmn.core.databinding.LoadingLayoutBinding
+import ru.mmn.model.data.DataModel
 import ru.mmn.translatorapp.model.data.AppState
-import ru.mmn.translatorapp.model.data.DataModel
 import ru.mmn.translatorapp.utils.ui.AlertDialogFragment
 import ru.mmn.utils.network.OnlineLiveData
 

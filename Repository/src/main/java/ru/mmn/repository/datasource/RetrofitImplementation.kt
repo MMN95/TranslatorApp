@@ -6,15 +6,15 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import ru.mmn.translatorapp.model.data.DataModel
+import ru.mmn.translatorapp.model.data.SearchResultDto
 import ru.mmn.translatorapp.model.data.api.ApiService
 import ru.mmn.translatorapp.model.data.api.BaseInterceptor
 
 private const val BASE_URL_LOCATIONS = "https://dictionary.skyeng.ru/api/public/v1/"
 
-class RetrofitImplementation : DataSource<List<DataModel>> {
+class RetrofitImplementation : DataSource<List<SearchResultDto>> {
 
-    override suspend fun getData(word: String): List<DataModel> {
+    override suspend fun getData(word: String): List<SearchResultDto> {
         return getService(BaseInterceptor.interceptor).searchAsync(word).await()
     }
 

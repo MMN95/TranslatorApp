@@ -5,8 +5,8 @@ import androidx.lifecycle.Observer
 import org.koin.android.scope.currentScope
 import ru.mmn.core.BaseActivity
 import ru.mmn.historyscreen.databinding.ActivityHistoryBinding
+import ru.mmn.model.data.DataModel
 import ru.mmn.translatorapp.model.data.AppState
-import ru.mmn.translatorapp.model.data.DataModel
 
 class HistoryActivity : BaseActivity<AppState, HistoryInteractor>() {
 

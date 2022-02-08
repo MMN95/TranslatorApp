@@ -4,7 +4,7 @@ import androidx.room.Room
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
-import ru.mmn.translatorapp.model.data.DataModel
+import ru.mmn.translatorapp.model.data.SearchResultDto
 import ru.mmn.translatorapp.model.datasource.RetrofitImplementation
 import ru.mmn.translatorapp.model.datasource.RoomDataBaseImplementation
 import ru.mmn.translatorapp.model.repository.Repository
@@ -26,9 +26,9 @@ val application = module {
 
     single { get<HistoryDataBase>().historyDao() }
 
-    single<Repository<List<DataModel>>> { RepositoryImplementation(RetrofitImplementation()) }
+    single<Repository<List<SearchResultDto>>> { RepositoryImplementation(RetrofitImplementation()) }
 
-    single<RepositoryLocal<List<DataModel>>> { RepositoryImplementationLocal(RoomDataBaseImplementation(get())) }
+    single<RepositoryLocal<List<SearchResultDto>>> { RepositoryImplementationLocal(RoomDataBaseImplementation(get())) }
 }
 
 val mainScreen = module {
