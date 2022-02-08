@@ -15,7 +15,6 @@ import ru.mmn.translatorapp.databinding.ActivityMainBinding
 import ru.mmn.translatorapp.model.data.AppState
 import ru.mmn.translatorapp.model.data.DataModel
 import ru.mmn.translatorapp.utils.convertMeaningsToString
-import ru.mmn.translatorapp.utils.isOnline
 import ru.mmn.translatorapp.view.descriptionscreen.DescriptionActivity
 import ru.mmn.translatorapp.view.history.HistoryActivity
 import ru.mmn.translatorapp.view.main.adapter.MainAdapter
@@ -43,7 +42,6 @@ class MainActivity : BaseActivity<AppState, MainInteractor>() {
     private val onSearchClickListener: SearchDialogFragment.OnSearchClickListener =
         object : SearchDialogFragment.OnSearchClickListener {
             override fun onClick(searchWord: String) {
-                isNetworkAvailable = isOnline(applicationContext)
                 if (isNetworkAvailable) {
                     model.getData(searchWord, isNetworkAvailable)
                 } else {
