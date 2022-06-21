@@ -3,9 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/mmn95/AndroidStudioProjects/GBProjects/TranslatorApp/app/src/main/res/drawable-v24/ic_history.xml" value="0.1" />
+        <entry key="..\:/Users/mmn95/AndroidStudioProjects/GBProjects/TranslatorApp/app/src/main/res/layout/acactivity_history_recycler_view_item.xml" value="0.22" />
+        <entry key="..\:/Users/mmn95/AndroidStudioProjects/GBProjects/TranslatorApp/app/src/main/res/layout/activity_description.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/mmn95/AndroidStudioProjects/GBProjects/TranslatorApp/app/src/main/res/layout/activity_history_recyclerview_item.xml" value="0.18" />
         <entry key="..\:/Users/mmn95/AndroidStudioProjects/GBProjects/TranslatorApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/mmn95/AndroidStudioProjects/GBProjects/TranslatorApp/app/src/main/res/layout/activity_main_recyclerview_item.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/mmn95/AndroidStudioProjects/GBProjects/TranslatorApp/app/src/main/res/layout/history_activity.xml" value="0.1" />
+        <entry key="..\:/Users/mmn95/AndroidStudioProjects/GBProjects/TranslatorApp/app/src/main/res/layout/loading_layout.xml" value="0.25" />
         <entry key="..\:/Users/mmn95/AndroidStudioProjects/GBProjects/TranslatorApp/app/src/main/res/layout/search_dialog_fragment.xml" value="0.33" />
+        <entry key="..\:/Users/mmn95/AndroidStudioProjects/GBProjects/TranslatorApp/app/src/main/res/menu/history_menu.xml" value="0.25" />
       </map>
     </option>
   </component>
